@@ -28,8 +28,14 @@ const Homepage = ({ onSignIn, onSignUp, onPostJob, showStandaloneHeader = true }
         queryParams.append('location', location.trim());
       }
       
-      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
-      const response = await fetch(`${API_BASE_URL}/remotive-jobs?${queryParams.toString()}`);
+      const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+
+console.log("API_BASE_URL:", API_BASE_URL);
+
+const response = await fetch(
+  `${API_BASE_URL}/remotive-jobs?${queryParams.toString()}`
+);
       
       const data = await response.json();
       setJobs(data.jobs || []);
