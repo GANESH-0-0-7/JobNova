@@ -27,7 +27,7 @@ const AppContent = () => {
   useEffect(() => {
     const checkBackendHealth = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+        const API_URL = import.meta.env.VITE_API_URL || "https://jobnova-mphs.onrender.com";
 
 const response = await fetch(`${API_URL}/api/health`, {
   method: "GET",
