@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-// Health check endpoint for frontend to verify backend is ready
+// Health check endpoint
 router.get('/health', (req, res) => {
-  res.json({
+  res.status(200).json({
+    success: true,
     status: 'healthy',
     message: 'Backend server is running',
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
-    version: '1.0.0'
+    version: '2.0.0'
   });
 });
 
